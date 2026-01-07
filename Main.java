@@ -22,8 +22,11 @@ permitir a entrada de outro pet;
 - A limpeza da máquina ira consumir 3 litros de água e 1 litro de shampoo;
 - o abastecimento de água e shampoo deve permitir 2 litros por vez que for acionado;
  */
+
+/* Essa classe contaban.java serve para ler entrada do usuário (Scanner),
+mostrar menu e delegar ações para a PetMachine */
 import java.util.Scanner;
-public class contaban{
+public class Main{
 
     private final static Scanner scanner = new Scanner(System.in);
 
@@ -57,7 +60,7 @@ public class contaban{
                 case 7 -> setPetInPetMachine();
                 case 8 -> petMachine.removePet();
                 case 9 -> petMachine.wash();
-                case 0 ->System.exit(0);
+                case 0 ->System.exit(0); // dentro de programas grandes evitar System.exit.
                 default -> System.out.println("Opção inválida");
                 
 
