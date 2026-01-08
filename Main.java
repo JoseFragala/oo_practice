@@ -28,14 +28,14 @@ mostrar menu e delegar ações para a PetMachine */
 import java.util.Scanner;
 public class Main{
 
-    private final static Scanner scanner = new Scanner(System.in);
+    private final static Scanner scanner = new Scanner(System.in); 
 
-    private final static PetMachine petMachine = new PetMachine();
+    private final static PetMachine petMachine = new PetMachine();// cria uma unica maquina de banho
 
-    public static void main (String[] args){
+    public static void main (String[] args){ // ponto de entrada do sistema.
         var option = -1;
 
-        do {
+        do { // loop do menu
             System.out.println("===Escolha uma das opções===");
             System.out.println("1 - Dar banho no pet");
             System.out.println("2 - Abastecer a máquina com água");
@@ -50,7 +50,7 @@ public class Main{
             option = scanner.nextInt();
 
 
-            switch (option){
+            switch (option){ // leitura da opção. (não faz logica, apenas chama os metodos)
                 case 1 -> petMachine.takeAShower();
                 case 2 -> setWater();
                 case 3 -> setShampoo();
@@ -69,25 +69,25 @@ public class Main{
         }while (true);
         }
 
-    private static void setWater(){
+    private static void setWater(){ // metodos auxiliares
         System.out.println("tentando colocar agua na maquina");
         petMachine.addWater();
     }
 
      private static void setShampoo(){
-        System.out.println("tentando colocar agua na maquina");
+        System.out.println("tentando colocar shampoo na maquina");
         petMachine.addShampoo();
     }
 
     private static void verifyWater() {
         var amount = petMachine.getWater();
-        System.out.println("A máquina está no momento com " + amount + "Listros(s) de água");
+        System.out.println("A máquina está no momento com " + amount + "Litros(s) de água");
     }
 
 
     private static void verifyShampoo() {
         var amount = petMachine.getShampoo();
-        System.out.println("A máquina está no momento com " + amount + "Listros(s) de shampoo");
+        System.out.println("A máquina está no momento com " + amount + "Litros(s) de shampoo");
     }
 
         public static void checkIfHasPetInMachine(){
@@ -103,7 +103,7 @@ public class Main{
             }
             var pet = new Pet(name);
             petMachine.setPet(pet);
-            System.out.println("O pet" + pet.getName() + " foi colocado na máquina");
+            System.out.println("O pet " + pet.getName() + " foi colocado na máquina");
         }
     
         
